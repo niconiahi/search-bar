@@ -41,5 +41,7 @@ export const Container = styled.div`
 
   .delete-icon {
     fill: white;
+
+    cursor: pointer;
   }
 `;

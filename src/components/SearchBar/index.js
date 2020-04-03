@@ -24,7 +24,7 @@ const SearchBar = () => {
   const handleSearchClick = () => setIsActive(isActive => !isActive);
 
   const handleBlur = () => {
-    setIsActive(isActive => !isActive);
+    if (!criteria) setIsActive(isActive => !isActive);
     setCriteria("");
   };
 
