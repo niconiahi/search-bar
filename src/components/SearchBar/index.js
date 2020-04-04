@@ -23,14 +23,17 @@ const SearchBar = () => {
 
   const handleSearchClick = () => setIsActive(isActive => !isActive);
 
-  const handleMouseLeave = () => {
+  const handleBlur = () => {
     if (!criteria) {
       setIsActive(isActive => !isActive);
       setCriteria("");
     }
   };
 
-  const handleDeleteClick = () => setCriteria("");
+  const handleDeleteClick = () => {
+    setCriteria("");
+    inputRef.current.focus();
+  };
 
   const handleInputChange = e => setCriteria(e.target.value);
 
@@ -38,15 +41,10 @@ const SearchBar = () => {
     if (isActive) inputRef.current.focus();
   }, [isActive]);
 
-  console.log(inputRef);
   return (
     <Container>
       <FaSearch onClick={handleSearchClick} className="search-icon" />
-      <animated.div
-        style={props}
-        className="input-wrapper"
-        onMouseLeave={handleMouseLeave}
-      >
+      <animated.div style={props} className="input-wrapper" onBlur={handleBlur}>
         <input
           ref={inputRef}
           criteria={criteria}

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 // components
-import SearchBar from './components/SearchBar';
+import SearchBar from "./components/SearchBar";
 
 function App() {
   return (
