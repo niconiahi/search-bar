@@ -42,8 +42,8 @@ const SearchBar = () => {
   }, [isActive]);
 
   return (
-    <Container>
-      <FaSearch onClick={handleSearchClick} className="search-icon" />
+    <Container onClick={handleSearchClick}>
+      <FaSearch  className="search-icon" />
       <animated.div style={props} className="input-wrapper" onBlur={handleBlur}>
         <input
           ref={inputRef}

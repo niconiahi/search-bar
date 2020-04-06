@@ -5,6 +5,9 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
+  min-width: 30px;
+  min-height: 30px;
+
   .search-icon {
     fill: white;
 
