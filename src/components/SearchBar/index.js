@@ -10,8 +10,6 @@ const SearchBar = () => {
   const [isActive, setIsActive] = useState(false);
   const inputRef = useRef(null);
 
-  console.log("SearchBar -> isActive", isActive);
-
   const props = useSpring({
     from: {
       width: isActive ? 0 : 0,
