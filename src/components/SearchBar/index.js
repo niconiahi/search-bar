@@ -23,10 +23,12 @@ const SearchBar = () => {
     marginLeft: isActive ? 10 : 0,
   });
 
-  const handleSearchClick = () => setIsActive((isActive) => !isActive);
+  const handleSearchClick = () => setIsActive(true);
 
   const handleBlur = () => {
+    console.log("LVL 1");
     if (!criteria) {
+      console.log("LVL 2");
       setIsActive((isActive) => !isActive);
       setCriteria("");
     }
