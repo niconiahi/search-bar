@@ -51,7 +51,6 @@ const SearchBar = () => {
       <animated.div style={props} className="input-wrapper" onBlur={handleBlur}>
         <input
           ref={inputRef}
-          criteria={criteria}
           value={criteria}
           onChange={handleInputChange}
           className="input"
