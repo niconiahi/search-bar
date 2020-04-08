@@ -26,9 +26,7 @@ const SearchBar = () => {
   const handleSearchClick = () => setIsActive(true);
 
   const handleBlur = () => {
-    console.log("LVL 1");
     if (!criteria) {
-      console.log("LVL 2");
       setIsActive((isActive) => !isActive);
       setCriteria("");
     }
