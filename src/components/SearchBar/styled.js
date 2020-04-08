@@ -8,17 +8,17 @@ export const Container = styled.div`
   min-width: 30px;
   min-height: 30px;
 
+  cursor: pointer;
+
   .search-icon {
     fill: white;
-
-    cursor: pointer;
   }
 
   .input {
     background-color: transparent;
     border: none;
 
-    padding-bottom: 5px;
+    padding: 0 0 5px 0;
 
     width: 100%;
 
@@ -27,7 +27,6 @@ export const Container = styled.div`
 
     color: white;
 
-    cursor: pointer;
   }
 
   .input:focus {
@@ -44,7 +43,5 @@ export const Container = styled.div`
 
   .delete-icon {
     fill: white;
-
-    cursor: pointer;
   }
 `;

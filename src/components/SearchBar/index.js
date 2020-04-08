@@ -10,6 +10,8 @@ const SearchBar = () => {
   const [isActive, setIsActive] = useState(false);
   const inputRef = useRef(null);
 
+  console.log("SearchBar -> isActive", isActive)
+
   const props = useSpring({
     from: {
       width: isActive ? 0 : 0,
@@ -30,9 +32,11 @@ const SearchBar = () => {
     }
   };
 
-  const handleDeleteClick = () => {
+  const handleDeleteClick = (e) => {
     setCriteria("");
     inputRef.current.focus();
+
+    e.stopPropagation();
   };
 
   const handleInputChange = e => setCriteria(e.target.value);
@@ -45,13 +49,13 @@ const SearchBar = () => {
     <Container onClick={handleSearchClick}>
       <FaSearch  className="search-icon" />
       <animated.div style={props} className="input-wrapper" onBlur={handleBlur}>
-        <input
-          ref={inputRef}
-          criteria={criteria}
-          value={criteria}
-          onChange={handleInputChange}
-          className="input"
-        />
+          <input
+            ref={inputRef}
+            criteria={criteria}
+            value={criteria}
+            onChange={handleInputChange}
+            className="input"
+          />
         {isActive && criteria && (
           <FaTimesCircle className="delete-icon" onClick={handleDeleteClick} />
         )}
